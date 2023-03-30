@@ -12,7 +12,7 @@ static void list_audio_devices(const ALCchar *devices)
                   *next   = devices + 1;
     size_t len = 0;
 
-    fprintf(stdout, "Devices list:\n");
+    fprintf(stdout, "[ALWRAP] Devices list:\n");
     fprintf(stdout, "----------\n");
     while ( (device && (*device != '\0')) && (next && (*next != '\0')) ) {
         fprintf(stdout, "%s\n", device);
@@ -21,6 +21,7 @@ static void list_audio_devices(const ALCchar *devices)
         next += (len + 2);
     }
     fprintf(stdout, "----------\n");
+    fflush(stdout);
 }
 
 ALCdevice*  DEVICE  = nullptr;
@@ -30,7 +31,7 @@ bool al::simple_init(const char* defaultDeviceName)
 {
     const ALboolean enumeration = alcIsExtensionPresent(NULL, "ALC_ENUMERATION_EXT");
     if (enumeration == AL_FALSE) {
-        fprintf(stderr, "AL :: enumeration extension not available\n");
+        fprintf(stderr, "[ALWRAP] :: enumeration extension not available\n");
     }
 
     list_audio_devices( alcGetString(NULL, ALC_DEVICE_SPECIFIER) );
@@ -50,11 +51,11 @@ bool al::simple_init(const char* defaultDeviceName)
     DEVICE = alcOpenDevice(device_name);
     if (DEVICE == nullptr)
     {
-        fprintf(stderr, "AL :: unable to open default device\n");
+        fprintf(stderr, "[ALWRAP] :: unable to open default device\n");
         return false;
     }
 
-    fprintf(stdout, "AL :: Device: %s\n", alcGetString(DEVICE, ALC_DEVICE_SPECIFIER));
+    fprintf(stdout, "[ALWRAP] :: Device: %s\n", alcGetString(DEVICE, ALC_DEVICE_SPECIFIER));
 
     alGetError();
 
@@ -62,12 +63,12 @@ bool al::simple_init(const char* defaultDeviceName)
     CONTEXT = alcCreateContext(DEVICE, NULL);
     if( alcMakeContextCurrent(CONTEXT) == AL_FALSE )
     {
-        fprintf(stderr, "AL :: Failed to make default context\n");
+        fprintf(stderr, "[ALWRAP] :: Failed to make default context\n");
         return false;
     }
 
     if( alGetError() != AL_NO_ERROR) {
-        fprintf(stderr, "AL :: Failed to make default context\n");
+        fprintf(stderr, "[ALWRAP] :: Failed to make default context\n");
     }
 
     return true;

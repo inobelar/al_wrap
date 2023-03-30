@@ -6,7 +6,7 @@ const char* al_error_to_str(int errorId);
 
 const char* al_error_description_str(int errorId);
 
-bool check_alerror(const char* file, int line, const char* str);
+bool check_al_error(const char* file, int line, const char* str);
 
 #if defined(ALWRAP_CHECK_FUNCS)
 
@@ -15,7 +15,7 @@ bool check_alerror(const char* file, int line, const char* str);
     #define ALWRAP_AL_CHECK(expression) \
         do { \
             expression; \
-            (void) al::check_alerror(__FILE__, __LINE__, #expression); \
+            (void) al::check_al_error(__FILE__, __LINE__, #expression); \
         } while(false)
 
 #else // !defined(ALWRAP_CHECK_FUNCS)
