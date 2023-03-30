@@ -39,6 +39,6 @@
 
         # Add (on Debug) 'al_wrap' define - to enable OpenAL functions checking
         if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
-            target_compile_definitions( <YOUR_EXECUTABLE> ALWRAP_CHECK_FUNCS)
+            target_compile_definitions( <YOUR_EXECUTABLE> ALWRAP_CHECK_FUNCS )
         endif()
         ```
