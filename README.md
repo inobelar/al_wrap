@@ -7,7 +7,7 @@
 
 ## Usage
 
-- `qmake`:
+- `QMake`:
     - Add into your `*.pro` file the next lines:
 
         ```qmake
@@ -18,8 +18,8 @@
             DEFINES += ALWRAP_CHECK_FUNCS
         }
         ```
-- `cmake`:
-    - Add into `CMakeLists.txt` file the next lines:
+- `CMake`:
+    - Add into your `CMakeLists.txt` file the next lines:
 
         ```cmake
         # Add 'al_wrap' into modules search path - to find this file (al_wrap.cmake)
