@@ -17,14 +17,19 @@
     # Add 'al_wrap' includes search path
     target_include_directories( <YOUR_EXECUTABLE> ${ALWRAP_INCLUDE_DIRECTORIES} )
 
-	# Add 'al_wrap' dependency libraries (OpenAL library)
-	target_link_libraries( <YOUR_EXECUTABLE> ${ALWRAP_LIBRARIES} )
+    # Add 'al_wrap' dependency libraries (OpenAL library)
+    target_link_libraries( <YOUR_EXECUTABLE> ${ALWRAP_LIBRARIES} )
+
+    # Add (on Debug) 'al_wrap' define - to enable OpenAL functions checking
+    if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
+        target_compile_definitions( <YOUR_EXECUTABLE> ALWRAP_CHECK_FUNCS)
+    endif()
 
     # --------------------------------------------------------------------------
 ]]
 
 set(ALWRAP_INCLUDE_DIRECTORIES
-	${CMAKE_CURRENT_LIST_DIR}/include/
+    ${CMAKE_CURRENT_LIST_DIR}/include/
 )
 
 set(ALWRAP_HEADERS
@@ -50,5 +55,5 @@ set(ALWRAP_SOURCES
 )
 
 set(ALWRAP_LIBRARIES
-	openal
+    openal
 )
