@@ -1,6 +1,6 @@
 #pragma once
 
-#include "al_Object.hpp"
+#include <al_wrap/objects/al_Object.hpp>
 
 #include <array>
 #include <vector>

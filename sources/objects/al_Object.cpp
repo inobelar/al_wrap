@@ -1,4 +1,4 @@
-#include "al_Object.hpp"
+#include <al_wrap/objects/al_Object.hpp>
 
 al::Object::Object()
     : _id(0)

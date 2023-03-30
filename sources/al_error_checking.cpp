@@ -1,4 +1,4 @@
-#include "al_error_checking.hpp"
+#include <al_wrap/al_error_checking.hpp>
 
 #include <AL/al.h>
 

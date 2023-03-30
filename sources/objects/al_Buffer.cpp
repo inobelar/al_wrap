@@ -1,4 +1,4 @@
-#include "al_Buffer.hpp"
+#include <al_wrap/objects/al_Buffer.hpp>
 
 #include <AL/al.h>
 #include <al_wrap/al_error_checking.hpp>

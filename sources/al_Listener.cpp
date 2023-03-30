@@ -1,4 +1,4 @@
-#include "al_Listener.hpp"
+#include <al_wrap/al_Listener.hpp>
 
 #include <AL/al.h>
 #include <al_wrap/al_error_checking.hpp>

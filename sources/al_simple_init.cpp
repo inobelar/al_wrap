@@ -1,4 +1,4 @@
-#include "al_simple_init.hpp"
+#include <al_wrap/al_simple_init.hpp>
 
 #include <AL/alc.h> // OpenAL context functions
 #include <AL/al.h>  // OpenAL functions
