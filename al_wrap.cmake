@@ -44,14 +44,14 @@ set(ALWRAP_HEADERS
 )
 
 set(ALWRAP_SOURCES
-    $$PWD/sources/al_simple_init.cpp
-    $$PWD/sources/al_error_checking.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/sources/al_simple_init.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/sources/al_error_checking.cpp
 
-    $$PWD/sources/al_Listener.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/sources/al_Listener.cpp
 
-    $$PWD/sources/objects/al_Object.cpp
-    $$PWD/sources/objects/al_Buffer.cpp
-    $$PWD/sources/objects/al_Source.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/sources/objects/al_Object.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/sources/objects/al_Buffer.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/sources/objects/al_Source.cpp
 )
 
 set(ALWRAP_LIBRARIES
